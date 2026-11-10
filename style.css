@@ -1,0 +1,173 @@
+/* GLOBAL RESET
+    applies to every element (*) so padding and borders stay inside box widths */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* HTML background color */
+html {
+  background-color: #FFDAB9
+}
+
+/* PAGE BACKGROUND AND CENTERING
+    uses flexbox on the body to center your app card in the middle of the screen */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #FFDAB9;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  color: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+body.fade-in {
+  opacity: 1 !important;
+}
+
+/* MAIN APP CARD
+    widens the main card and splits it into two equal columns */
+.container {
+  background-color: #f4d7a1;
+  width: 100%;
+  max-width: 920px;
+  padding: 36px;
+  border-radius: 16px; 
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+}
+
+/* makes each column stretch to equal height and stack its content vertically */
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* PAGE HEADING
+    matches the heading size and alignment for both columns */
+h1, h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #231701;
+  text-align: left;
+}
+
+/* PROJECT IDEA DISPLAY BOX
+    creates a distinct box with a dashed border where ideas appear */
+.idea-box {
+  background-color: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px; 
+  min-height: 180px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Styles the paragraph text inside the idea box */
+#projectIdea {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #334155;
+}
+
+/* GENERATE BUTTON
+    styles the button with bold color, round corners, and smooth transitions */
+#generateBtn,
+#clearNotesBtn {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* matches the button height and padding on both sides */
+#generateBtn, .secondary-btn {
+  padding: 14px 24px;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* Darkens the button when your mouse hovers over it */
+#generateBtn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Slightly presses the button down when you click */
+#generateBtn:active {
+  transform: scale(0.98);
+}
+
+/* Styles the label above the typing box */
+.brainstorm-section label {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #334155;
+}
+
+/* stacks columns vertically on smaller screens */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* lets the textarea grow (flex:1) so both boxes end at the same line */
+textarea {
+  width: 100%;
+  min-height: 180px;
+  flex: 1;
+  padding: 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.5;
+  resize: none;
+  margin-bottom: 20px;
+}
+
+/* Highlights the border when you click inside to type */
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* styles the secondary Clear Notes button */
+.secondary-btn {
+  background-color: #e2e8f0;
+  color: #475569;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+.secondary-btn:hover {
+  background-color: #cbd5e1;
+}

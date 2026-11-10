@@ -1,2 +1,2 @@
-# project-lottery
-A clean, side-by-side web tool that randomly selects programming tasks from a custom list and saves brainstorming notes via localStorage.
+# random project generator
+a generator that takes a list of my portfolio project ideas and chooses one at random for me to start on next

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Are We Building Today?</title>
+    <style> 
+    /* Prevent the white canvas flash by setting the framework to peach */
+        html {
+            background-color: #FFDAB9 !important;
+        }
+
+     /* Start the body completely invisible */
+        body {
+            background-color: #FFDAB9 !important;
+            margin: 0;
+            padding: 20px;
+            font-family: sans-serif;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+    /* When the class is added, smoothly animate to full view */
+        body.fade-in {
+            opacity: 1 !important;
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="fade-in">
+    
+    <!-- main wrapper box -->
+    <div class="container">
+        <!-- left column: Random Project Generator -->
+        <div class="column">
+            <h1>My Next Portfolio Project</h1>
+            <div class="idea-box">
+                <p id="projectIdea">Let's See What's Next!</p>
+            </div>
+           <button id="generateBtn" type="button">Click Me</button>
+        </div>
+        <!-- right column: Brainstorming Notepad -->
+        <div class="column">
+            <h2>Drawing Board</h2>
+            <textarea id="notesArea" placeholder="Jot down features, colors, or steps for this project..."></textarea>
+            <button id="clearNotesBtn" class="secondary-btn" type="button">Clear Notes</button>
+        </div>
+    </div>
+
+    <script>document.body.className += "fade-in";</script>
+
+</body>
+</html>
